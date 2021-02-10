@@ -1,0 +1,94 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: CTS assignment API for recruitment
+  description: This is test api to evaluate candidate condidate coding skills
+servers:
+  - url: 'http://localhost:8080/records'
+paths:
+  /records/validate:
+    post:
+      description: Validate statement record of bank customers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Records'
+      responses:
+        '200':
+          description: Successfully returned a list of artists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecordResponse'
+        '400':
+          description: Invalid input record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecordResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecordResponse'
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+  schemas:
+    RecordResponse:
+      type: object
+      properties:
+        results:
+          type: string
+          enum:
+            - SUCCESSFUL
+            - DUPLICATE_REFERENCE
+            - DUPLICATE_REFERENCE_INCORRECT_END_BALANCE
+            - INCORRECT_END_BALANCE
+            - INTERNAL_SERVER_ERROR
+            - BAD_REQUEST
+        errorRecords:
+          type: array
+          items:
+            type: object
+            properties:
+              reference:
+                type: string
+              accountNumber:
+                type: string
+    Records:
+      type: array
+      items:
+        $ref: '#/components/schemas/Record'
+    Record:
+      type: object
+      required:
+        - txnReference
+        - accNumber
+        - startBalance
+        - mutation
+        - endBalance
+      properties:
+        txnReference:
+          type: integer
+        accNumber:
+          type: string
+          pattern: '^[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}$'
+        startBalance:
+          type: number
+          format: double
+          minimum: 0
+        mutation:
+          type: number
+          format: double
+        endBalance:
+          type: number
+          format: double
+          minimum: 0
+        Description:
+          type: string
