@@ -1,7 +1,7 @@
 # Runbook for Customer Statement Processor API
 
-In our bank we receives monthly deliveries of customer statement records. This information is delivered in JSON Format.
-These records need to be validated.
+This API is built using Springboot, Jersey and Maven. For integration test It is using Karate.  It is stateless api and not storing any data.
+It will read statement record in Json format and validate it based on below requirements
 
 ## Input
 
@@ -16,9 +16,7 @@ The format is as follows: Table 1. Record description
 | Description            | Free text                                        |
 | End Balance            | The end balance in Euros                         |
 
-## Assignment
-
-Implement a REST service which receives the customer statement JSON as a POST data, Perform the below validations
+## Requirements
 
 1. All transaction references should be unique
 2. The end balance needs to be validated ( Start Balance +/- Mutation = End Balance )
@@ -34,8 +32,8 @@ Implement a REST service which receives the customer statement JSON as a POST da
 | 400               |Error during parsing JSON                                          | `{"result" : "BAD_REQUEST", "errorRecords" : []}`|
 | 500               |Any other situation                                                |`{"result" : "INTERNAL_SERVER_ERROR","errorRecords" : [] }`|
 
-## Instructions
+## Run Instructions 
+It is Maven base project so for executing it below common from terminal or IDE.
 
-* Assignment should be submitted as a maven project
-* Junit should be well written.
-* Integration test should be implemented ( For Mediors only )
+1. mvn clean install
+2. mvn spring-boot:run pom.xml
