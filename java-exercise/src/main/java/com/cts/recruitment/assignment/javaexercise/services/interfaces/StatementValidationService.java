@@ -1,6 +1,6 @@
 package com.cts.recruitment.assignment.javaexercise.services.interfaces;
 
-import com.cts.recruitment.assignment.dinesh.model.Record;
+import com.cts.recruitment.assignment.model.Record;
 import org.springframework.stereotype.Service;
 
 import javax.ws.rs.core.Response;

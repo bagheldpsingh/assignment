@@ -4,10 +4,9 @@ package com.cts.recruitment.assignment.javaexercise.services.impl;
  * @Author Dinesh Singh
  */
 
-import com.cts.recruitment.assignment.dinesh.model.Record;
-import com.cts.recruitment.assignment.dinesh.model.RecordResponse;
-import com.cts.recruitment.assignment.dinesh.model.RecordResponseErrorRecords;
-import com.cts.recruitment.assignment.javaexercise.resources.CustomerStatementResource;
+import com.cts.recruitment.assignment.model.Record;
+import com.cts.recruitment.assignment.model.RecordResponse;
+import com.cts.recruitment.assignment.model.RecordResponseErrorRecords;
 import com.cts.recruitment.assignment.javaexercise.services.interfaces.StatementValidationService;
 import com.cts.recruitment.assignment.javaexercise.utility.Utility;
 import org.slf4j.Logger;
@@ -21,7 +20,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class StatementValidationServiceImpl implements StatementValidationService {
-    Logger logger = LoggerFactory.getLogger(StatementValidationServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(StatementValidationServiceImpl.class);
 
     /**
      * This is method to validate statement records and send response to resource
@@ -64,9 +63,8 @@ public class StatementValidationServiceImpl implements StatementValidationServic
     }
 
     /**
-     * This is private method to find duplicate reference and sending final
-     * response to client
-     * It is not good performance O(n*n) logic and just to show java 8
+     * This is private method to find duplicate reference and storing it in
+     * List of Records
      *
      * @param lstRecords
      * @return {List<RecordResponseErrorRecords>}

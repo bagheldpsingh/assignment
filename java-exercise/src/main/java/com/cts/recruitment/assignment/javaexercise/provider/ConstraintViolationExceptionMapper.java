@@ -1,9 +1,8 @@
 package com.cts.recruitment.assignment.javaexercise.provider;
 
-import com.cts.recruitment.assignment.dinesh.model.RecordResponse;
+import com.cts.recruitment.assignment.model.RecordResponse;
 import com.cts.recruitment.assignment.javaexercise.utility.Utility;
 
-import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;

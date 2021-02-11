@@ -4,10 +4,9 @@ package com.cts.recruitment.assignment.javaexercise.utility;
  * @Author Dinesh singh
  */
 
-import com.cts.recruitment.assignment.dinesh.model.Record;
-import com.cts.recruitment.assignment.dinesh.model.RecordResponse;
-import com.cts.recruitment.assignment.dinesh.model.RecordResponseErrorRecords;
-import com.cts.recruitment.assignment.javaexercise.services.impl.StatementValidationServiceImpl;
+import com.cts.recruitment.assignment.model.Record;
+import com.cts.recruitment.assignment.model.RecordResponse;
+import com.cts.recruitment.assignment.model.RecordResponseErrorRecords;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +17,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 public class Utility {
-    private static Logger logger = LoggerFactory.getLogger(Utility.class);
+    private static final Logger logger = LoggerFactory.getLogger(Utility.class);
 
     /**
      * Method to create error details in response

@@ -1,6 +1,6 @@
 package com.cts.recruitment.assignment.javaexercise.resources;
 
-import com.cts.recruitment.assignment.dinesh.model.Record;
+import com.cts.recruitment.assignment.model.Record;
 import com.cts.recruitment.assignment.javaexercise.services.interfaces.StatementValidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ import java.util.List;
 public class CustomerStatementResource {
     /* This is logger */
 
-    Logger logger = LoggerFactory.getLogger(CustomerStatementResource.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomerStatementResource.class);
 
     private static final String HEALTH_CHECK_URL = "/health/check";
     private static final String VALIDATE_URL = "/validate";

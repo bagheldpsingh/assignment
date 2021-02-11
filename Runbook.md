@@ -34,6 +34,14 @@ The format is as follows: Table 1. Record description
 
 ## Run Instructions 
 It is Maven base project so for executing it below common from terminal or IDE.
-
+### To Run API
 1. mvn clean install
 2. mvn spring-boot:run pom.xml
+
+### To Run Test
+
+#### Pre Conditions
+ 1. Application should be running on Localhost and port 8080
+
+#### Steps to Execute Test
+1. Run TestRunner.class as Junit

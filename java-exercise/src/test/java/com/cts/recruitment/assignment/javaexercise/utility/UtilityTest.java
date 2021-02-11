@@ -1,8 +1,8 @@
 package com.cts.recruitment.assignment.javaexercise.utility;
 
-import com.cts.recruitment.assignment.dinesh.model.Record;
-import com.cts.recruitment.assignment.dinesh.model.RecordResponse;
-import com.cts.recruitment.assignment.dinesh.model.RecordResponseErrorRecords;
+import com.cts.recruitment.assignment.model.Record;
+import com.cts.recruitment.assignment.model.RecordResponse;
+import com.cts.recruitment.assignment.model.RecordResponseErrorRecords;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

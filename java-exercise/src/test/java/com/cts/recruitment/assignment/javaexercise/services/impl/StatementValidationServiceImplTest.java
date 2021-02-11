@@ -1,7 +1,7 @@
 package com.cts.recruitment.assignment.javaexercise.services.impl;
 
-import com.cts.recruitment.assignment.dinesh.model.Record;
-import com.cts.recruitment.assignment.dinesh.model.RecordResponse;
+import com.cts.recruitment.assignment.model.Record;
+import com.cts.recruitment.assignment.model.RecordResponse;
 import com.cts.recruitment.assignment.javaexercise.services.interfaces.StatementValidationService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,8 +10,6 @@ import org.junit.jupiter.api.Test;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class StatementValidationServiceImplTest {
 
